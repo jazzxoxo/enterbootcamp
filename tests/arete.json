@@ -1,0 +1,4 @@
+{
+    "dockerTimeout": 120,
+    "groupingFolders": ["tests"]
+  }
