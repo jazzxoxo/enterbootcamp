@@ -22,4 +22,4 @@ jobs:
         url: 'https://cs.ttu.ee/services/arete/api/v2/exercise/'
         method: 'PUT'
         customHeaders: '{"Authorization": "${{ secrets.TOKEN }}", "Content-Type": "application/json"}'
-        data: '{"project":{"url":"git@github.com:jazzxoxo/enterbootcamp.git","path_with_namespace":"git@github.com:jazzxoxo/enterbootcamp"}}'
+        data: '{"project":{"url":"git@github.com:jazzxoxo/enterbootcamp.git","path_with_namespace":"jazzxoxo/enterbootcamp"}}'
