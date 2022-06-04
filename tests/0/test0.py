@@ -9,12 +9,6 @@ import pytest
 MODULE_NAME = '0'
 
 @contextmanager
-def replace_stdin(target):
-    orig = sys.stdin
-    sys.stdin = target
-    yield
-    sys.stdin = orig
-
 
 def execute_module(module_name):
     """Execute module by name."""
@@ -25,15 +19,14 @@ def execute_module(module_name):
     return mod
 
 
-def execute_module_with_input_and_output(capsys, module_name, input_string):
+def execute_module_with_output(capsys, module_name):
     """Execute module, pass input, return (stdout, stderr)."""
-    with replace_stdin(io.StringIO(input_string)):
-        execute_module(module_name)
-        x = capsys.readouterr()
-        return x.out, x.err
+    execute_module(module_name)
+    x = capsys.readouterr()
+    return x.out, x.err
 
 
 def test_printed(capsys):
-    output = execute_module_with_input_and_output(capsys, MODULE_NAME)[0]
-    assert 'Hello, World!' in output, "Check spelling, the text should be \"Hello, World!\"."
+    output = execute_module_with_output(capsys, MODULE_NAME)[0]
+    assert output == 'Hello, World!', "Check spelling, the text should be \"Hello, World!\"."
 
