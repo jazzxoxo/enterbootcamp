@@ -8,6 +8,7 @@ import pytest
 
 MODULE_NAME = 'greet_name'
 
+
 @contextmanager
 def replace_stdin(target):
     orig = sys.stdin
