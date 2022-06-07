@@ -17,14 +17,6 @@ def execute_module(module_name):
         importlib.reload(mod)
     return mod
 
-
-def execute_module_with_output(capsys, module_name):
-    """Execute module, pass input, return (stdout, stderr)."""
-        execute_module(module_name)
-        x = capsys.readouterr()
-        return x.out, x.err
-
-
 def test_printed(capsys):
-    output = execute_module_with_output(capsys, MODULE_NAME)
+    output = execute_module(capsys, MODULE_NAME)
     assert 'Hello, World!' in output, "Check spelling, the text should be \"Hello, World!\"."#palun tööta
