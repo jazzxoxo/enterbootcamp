@@ -9,13 +9,6 @@ import pytest
 MODULE_NAME = '0'
 
 @contextmanager
-def replace_stdin(target):
-    orig = sys.stdin
-    sys.stdin = target
-    yield
-    sys.stdin = orig
-
-
 def execute_module(module_name):
     """Execute module by name."""
     reload = module_name in sys.modules
@@ -33,5 +26,5 @@ def execute_module_withand_output(capsys, module_name):
 
 
 def test_printed(capsys):
-    output = execute_module_with_input_and_output(capsys, MODULE_NAME)[0]
+    output = execute_module_with_input_and_output(capsys, MODULE_NAME)
     assert 'Hello, World!' in output, "Check spelling, the text should be \"Hello, World!\"."#palun tööta
