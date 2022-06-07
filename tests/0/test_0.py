@@ -17,6 +17,6 @@ def execute_module(module_name):
         importlib.reload(mod)
     return mod
 
-def test_printed(capsys):
-    output = execute_module(capsys, MODULE_NAME)
+def test_printed():
+    output = execute_module(MODULE_NAME)
     assert 'Hello, World!' in output, "Check spelling, the text should be \"Hello, World!\"."#palun tööta
