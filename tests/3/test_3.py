@@ -42,4 +42,4 @@ def test_input_asked(monkeypatch):
 
 def test_printed(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "12")[0]
-    assert 'True, ' in output, "12 is bigger than 10" #pls
+    assert 'True' in output, "12 is bigger than 10" #pls
