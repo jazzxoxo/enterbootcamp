@@ -42,8 +42,5 @@ def test_input_asked(monkeypatch):
 
 def test_printed(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "3")[0]
-    expected = """0
-                  1
-                  2
-                  3"""
+    expected = "0\n1\n2\n3"
     assert expected in output, "Wrong output" 
