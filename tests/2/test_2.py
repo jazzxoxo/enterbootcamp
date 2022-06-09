@@ -27,8 +27,7 @@ def execute_module(module_name):
 
 def execute_module_with_inputs_and_output(capsys, module_name, input1, input2):
     """Execute module, pass input, return (stdout, stderr)."""
-    with replace_stdin(io.StringIO(input1)):
-        with replace_stdin(io.StringIO(input2)):
+    with replace_stdin(io.StringIO(input1)) and replace_stdin(io.StringIO(input2)):
             execute_module(module_name)
             x = capsys.readouterr()
             return x.out, x.err
