@@ -25,12 +25,12 @@ def execute_module(module_name):
     return mod
 
 
-def execute_module_with_inputs_and_output(capsys, module_name, input1, input2):
+def execute_module_with_input_and_output(capsys, module_name, input_string):
     """Execute module, pass input, return (stdout, stderr)."""
-    with replace_stdin(io.StringIO(input1)) and replace_stdin(io.StringIO(input2)):
-            execute_module(module_name)
-            x = capsys.readouterr()
-            return x.out, x.err
+    with replace_stdin(io.StringIO(input_string)):
+        execute_module(module_name)
+        x = capsys.readouterr()
+        return x.out, x.err
 
 
 def test_input_asked(monkeypatch):
@@ -41,7 +41,7 @@ def test_input_asked(monkeypatch):
 
 
 def test_printed(capsys):
-    output = execute_module_with_inputs_and_output(capsys, MODULE_NAME, "Tom", "Mike")[0]
-    expected = "Hello Tom and Mike!"
+    output = execute_module_with_input_and_output(capsys, MODULE_NAME, "Tom\nMike")[0]
+    expected = "Hello Tom and Mike"
     message = output + " != " + expected
     assert expected in output, message
