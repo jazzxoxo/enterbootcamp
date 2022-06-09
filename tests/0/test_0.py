@@ -4,7 +4,7 @@ import pytest
 
 
 def test_print_hello(capsys):
-    import hello
-    importlib.reload(hello)
+    import 0
+    importlib.reload(0)
     captured = capsys.readouterr()
-    assert "Hello world!" in captured.out, "Does the code print \"Hello world!\"? The first letter should be a capital H."
+    assert "Hello, World!" in captured.out, "Does the code print \"Hello world!\"? The first letter should be a capital H."
