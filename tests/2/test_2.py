@@ -6,7 +6,7 @@ from unittest import mock
 
 import pytest
 
-MODULE_NAME = '4'
+MODULE_NAME = '2'
 
 @contextmanager
 def replace_stdin(target):
@@ -43,6 +43,6 @@ def test_input_asked(monkeypatch):
 
 def test_printed(capsys):
     output = execute_module_with_inputs_and_output(capsys, MODULE_NAME, "Tom", "Mike")[0]
-    expected = "Hello Tom and Mike"
+    expected = "Hello Tom and Mike!"
     message = output + " != " + expected
     assert expected in output, message
