@@ -41,7 +41,7 @@ def test_input_asked(monkeypatch):
 
 
 def test_printed(capsys):
-    output = execute_module_with_input_and_output(capsys, MODULE_NAME, "3")[0]
+    output = execute_module_with_input_and_output(capsys, MODULE_NAME, "4")[0]
     expected = """0
                   1
                   2
