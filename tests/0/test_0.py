@@ -30,5 +30,5 @@ def execute_module(module_name):
     return mod
 
 def test_printed(capsys):
-    output = execute_module(MODULE_NAME)[0]
-    assert "Hello, World!" in output, "12 is bigger than 10" #pls
+    output = execute_module(MODULE_NAME)
+    assert "Hello, World!" in output, "spelling"
