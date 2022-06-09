@@ -6,6 +6,8 @@ from unittest import mock
 
 import pytest
 
+MODULE_NAME = "0"
+
 @contextmanager
 def replace_stdin(target):
     orig = sys.stdin
