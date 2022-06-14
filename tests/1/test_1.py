@@ -40,11 +40,6 @@ def test_input_asked(monkeypatch):
         f.assert_called()
 
 
-def test_greeting_printed(capsys):
-    output = execute_module_with_input_and_output(capsys, MODULE_NAME, "test")[0]
-    assert 'Hello, ' in output, "Check spelling, the text should be \"Hello, [name]\"."
-
-
 def test_greeting_with_name(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "tom")[0]
-    assert 'tom' in output, "If input is provided, the program should use the input for greeting."
+    assert 'Hello, Tom!' in output, "If input is provided, the program should use the input for greeting."
