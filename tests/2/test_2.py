@@ -42,6 +42,6 @@ def test_input_asked(monkeypatch):
 
 def test_printed(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "Tom\nMike")[0]
-    expected = "Hello Tom and Mike!"
+    expected = "Hello, Tom and Mike!"
     message = output + " != " + expected
     assert expected in output, message
