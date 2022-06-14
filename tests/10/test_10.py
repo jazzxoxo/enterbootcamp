@@ -43,5 +43,5 @@ def test_input_asked(monkeypatch):
 def test_printed(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "4\n8")[0]
     expected = "12"
-    message = output + " != " + expected
+    message = (output + " != " + expected)
     assert expected in output, message
