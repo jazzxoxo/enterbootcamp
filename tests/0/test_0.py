@@ -15,7 +15,7 @@ MODULE_NAME = "0"
 #    captured = capsys.readouterr()
 #    assert "Hello, World!" in captured.out, "Does the code print \"Hello world!\"? The first letter should be a capital H."
 
-def execute_module(capsys, module_name):
+def execute_module(module_name):
     """Execute module by name."""
     reload = module_name in sys.modules
     mod = importlib.import_module(module_name)
@@ -26,5 +26,5 @@ def execute_module(capsys, module_name):
     return x.out, x.err
 
 def test_printed():
-    output = execute_module(capsys, MODULE_NAME)
+    output = execute_module(MODULE_NAME)[0]
     assert "Hello, World!" in output, "spelling"
