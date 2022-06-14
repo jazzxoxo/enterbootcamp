@@ -41,5 +41,5 @@ def test_input_asked(monkeypatch):
 
 
 def test_greeting_with_name(capsys):
-    output = execute_module_with_input_and_output(capsys, MODULE_NAME, "tom")[0]
+    output = execute_module_with_input_and_output(capsys, MODULE_NAME, "Tom")[0]
     assert 'Hello, Tom!' in output, "If input is provided, the program should use the input for greeting."
