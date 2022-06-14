@@ -29,6 +29,6 @@ def execute_module_with_output(capsys, module_name):
     x = capsys.readouterr()
     return x.out, x.err
 
-def test_printed():
+def test_printed(capsys):
     output = execute_module_with_output(capsys, MODULE_NAME)[0]
     assert "Hello, World!" in output, "spelling"
