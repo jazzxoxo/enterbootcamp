@@ -9,12 +9,6 @@ import pytest
 MODULE_NAME = "0"
 
 @contextmanager
-def replace_stdin(target):
-    orig = sys.stdin
-    sys.stdin = target
-    yield
-    sys.stdin = orig
-
 #def test_print_hello(capsys):
 #    import hello
 #    importlib.reload(hello)
@@ -29,6 +23,6 @@ def execute_module(module_name):
         importlib.reload(mod)
     return mod
 
-def test_printed(capsys):
+def test_printed():
     output = execute_module(MODULE_NAME)
     assert "Hello, World!" in output, "spelling"
