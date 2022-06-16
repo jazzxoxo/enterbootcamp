@@ -39,11 +39,9 @@ def errormsg(o, e):
 def test_1(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "3\n4")[0]
     expected = "5"
-    message = errormsg(output, expected)
-    assert expected in output, message
+    assert output == expected, errormsg(output, expected)
 
 def test_2(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "6\n8")[0]
     expected = "10"
-    message = errormsg(output, expected)
-    assert expected in output, message
+    assert output == expected, errormsg(output, expected)
