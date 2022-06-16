@@ -1,7 +1,7 @@
 import random
 import string
 
-from "{0}.py".format("17") import lenght
+from importlib.import_module("17") import lenght
 
 import pytest
 
