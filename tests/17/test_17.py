@@ -2,7 +2,6 @@ import random
 import string
 
 import pytest
-from "17.py" import lenght
 
 @pytest.mark.timeout(1.0)
 def test__17_01():
