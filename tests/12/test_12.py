@@ -33,7 +33,7 @@ def execute_module_with_input_and_output(capsys, module_name, input_string):
         return x.out, x.err
 
 def errormsg(o, e):
-    m = (o.strip(), " != ", e.strip())
+    m = (round(o.strip()), " != ", e.strip())
     return "".join(m)
 
 def test_1(capsys):
