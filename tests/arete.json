@@ -1,4 +1,6 @@
 {
-    "dockerTimeout": 120,
-    "groupingFolders": ["tests"]
-  }
+  "dockerTimeout": 120,
+  "groupingFolders": ["tests"],
+  "systemExtra": [
+    "noMail"]
+}
