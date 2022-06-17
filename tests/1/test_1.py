@@ -34,4 +34,4 @@ def execute_module_with_input_and_output(capsys, module_name, input_string):
 
 def test_greeting_with_name(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "Tom")[0]
-    assert 'Hello, Tom!' == output, "".join((output.strip(), " != ", 'Hello, Tom!'))
+    assert output.strip() == "Hello, Tom!" , "".join((output.strip(), " != ", 'Hello, Tom!'))
