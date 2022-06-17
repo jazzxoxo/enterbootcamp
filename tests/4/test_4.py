@@ -35,4 +35,4 @@ def execute_module_with_input_and_output(capsys, module_name, input_string):
 def test_printed(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "3")[0]
     expected = "0\n1\n2\n3"
-    assert expected == output.strip(), "".join((output.strip(), " != ", expected))
+    assert expected == output.strip(), "".join((repr(output.strip()), " != ", repr(expected)))
