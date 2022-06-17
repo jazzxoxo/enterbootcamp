@@ -32,14 +32,12 @@ def execute_module_with_input_and_output(capsys, module_name, input_string):
         x = capsys.readouterr()
         return x.out, x.err
 
-
-def test_input_asked(monkeypatch):
-    """Whether input() is called."""
-    with mock.patch('builtins.input') as f:
-        execute_module(MODULE_NAME)
-        f.assert_called()
-
-
-def test_printed(capsys):
+def test_1(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "12")[0]
-    assert 'True' in output, "12 is bigger than 10" #pls
+    expexted = "True"
+    assert expected == output.strip(), "".join((output.strip(), " != ", expected))
+
+def test_1(capsys):
+    output = execute_module_with_input_and_output(capsys, MODULE_NAME, "10")[0]
+    expexted = "False"
+    assert expected == output.strip(), "".join((output.strip(), " != ", expected))
