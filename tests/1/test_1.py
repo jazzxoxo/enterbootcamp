@@ -32,14 +32,6 @@ def execute_module_with_input_and_output(capsys, module_name, input_string):
         x = capsys.readouterr()
         return x.out, x.err
 
-
-def test_input_asked(monkeypatch):
-    """Whether input() is called."""
-    with mock.patch('builtins.input') as f:
-        execute_module(MODULE_NAME)
-        f.assert_called()
-
-
 def test_greeting_with_name(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "Tom")[0]
-    assert 'Hello, Tom!' in output, "If input is provided, the program should use the input for greeting."
+    assert 'Hello, Tom!' == output, "".join(output.strip()), " != ", 'Hello, Tom!')
