@@ -31,4 +31,4 @@ def execute_module_with_output(capsys, module_name):
 
 def test_printed(capsys):
     output = execute_module_with_output(capsys, MODULE_NAME)[0]
-    assert "Hello, World!" in output, "spelling"
+    assert "Hello, World!" == output.strip(), "".join((output.strip(), " != ", 'Hello, World!'))
