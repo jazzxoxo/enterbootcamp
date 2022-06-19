@@ -34,10 +34,10 @@ def execute_module_with_input_and_output(capsys, module_name, input_string):
 
 def test_1(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "12")[0]
-    expexted = "True"
+    expected = "True"
     assert expected == output.strip(), "".join((output.strip(), " != ", expected))
 
-def test_1(capsys):
+def test_2(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "10")[0]
-    expexted = "False"
+    expected = "False"
     assert expected == output.strip(), "".join((output.strip(), " != ", expected))
