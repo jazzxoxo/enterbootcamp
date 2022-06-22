@@ -3,9 +3,9 @@ import string
 
 import pytest
 
-from combine import combine
+from append_and_sort import append_and_sort
 
 @pytest.mark.timeout(1.0)
 def test__22_01():
-    assert combine([0,2,3],1) == [0,1,2,3]
-    assert combine([1, 2],5) == [1,2,5]
+    assert append_and_sort([0,2,3],1) == [0,1,2,3]
+    assert append_and_sort([1, 2],5) == [1,2,5]
