@@ -6,7 +6,7 @@ from unittest import mock
 
 import pytest
 
-MODULE_NAME = "0"
+MODULE_NAME = "31"
 
 @contextmanager
 #def test_print_hello(capsys):
