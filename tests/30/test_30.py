@@ -9,4 +9,4 @@ from chessboard import chessboard
 def test__30_01():
     assert chessboard(2) == ["a1","a2","b1","b2"]
     assert chessboard(1) == ["a1"]
-    assert chessboard(2) == ["a1","a2","a3","b1","b2","b3","c1","c2","c3"]
+    assert chessboard(3) == ["a1","a2","a3","b1","b2","b3","c1","c2","c3"]
