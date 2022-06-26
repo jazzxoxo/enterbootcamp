@@ -3,7 +3,7 @@ import string
 
 import pytest
 
-from date_to_date import date_to_date
+from morse import morse
 
 @pytest.mark.timeout(1.0)
 def test__39_01():
