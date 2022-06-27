@@ -35,4 +35,4 @@ def test_1(capsys):
 
 def test_2(capsys):
     output = execute_module_with_output(capsys, "100")[0]
-    assert "9" == output.strip()s
+    assert "9" == output.strip()
