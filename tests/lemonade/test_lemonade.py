@@ -32,12 +32,12 @@ def execute_module_with_input_and_output(capsys, module_name, input_string):
         x = capsys.readouterr()
         return x.out, x.err
 
-def test_printed(capsys):
+def test_1(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "10")[0]
     expected = "0"
     assert expected == output.strip()
 
-def test_printed(capsys):
+def test_2(capsys):
     output = execute_module_with_input_and_output(capsys, MODULE_NAME, "100")[0]
     expected = "9"
     assert expected == output.strip()
