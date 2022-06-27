@@ -6,14 +6,15 @@ from unittest import mock
 
 import pytest
 
-MODULE_NAME = "lemonade"
+MODULE_NAME = 'lemonade'
 
 @contextmanager
-#def test_print_hello(capsys):
-#    import hello
-#    importlib.reload(hello)
-#    captured = capsys.readouterr()
-#    assert "Hello, World!" in captured.out, "Does the code print \"Hello world!\"? The first letter should be a capital H."
+def replace_stdin(target):
+    orig = sys.stdin
+    sys.stdin = target
+    yield
+    sys.stdin = orig
+
 
 def execute_module(module_name):
     """Execute module by name."""
@@ -23,16 +24,20 @@ def execute_module(module_name):
         importlib.reload(mod)
     return mod
 
-def execute_module_with_output(capsys, module_name):
+
+def execute_module_with_input_and_output(capsys, module_name, input_string):
     """Execute module, pass input, return (stdout, stderr)."""
-    execute_module(module_name)
-    x = capsys.readouterr()
-    return x.out, x.err
+    with replace_stdin(io.StringIO(input_string)):
+        execute_module(module_name)
+        x = capsys.readouterr()
+        return x.out, x.err
 
-def test_1(capsys):
-    output = execute_module_with_output(capsys, "10")[0]
-    assert "0" == output.strip()
+def test_printed(capsys):
+    output = execute_module_with_input_and_output(capsys, MODULE_NAME, "10")[0]
+    expected = "0"
+    assert expected == output.strip()
 
-def test_2(capsys):
-    output = execute_module_with_output(capsys, "100")[0]
-    assert "9" == output.strip()
+def test_printed(capsys):
+    output = execute_module_with_input_and_output(capsys, MODULE_NAME, "100")[0]
+    expected = "9"
+    assert expected == output.strip()
